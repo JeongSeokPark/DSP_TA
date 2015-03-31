@@ -9,18 +9,18 @@ import javax.swing.JApplet;
 import javax.swing.JButton;
 
 import java.awt.Color;
-import java.awt.FlowLayout;
-
 import javax.swing.JLabel;
 
 import java.awt.Font;
 
-import javax.swing.JTextField;
-
-import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class SineCosineSynthesis extends JApplet implements ActionListener, MouseListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public SineCosineSynthesis() {
 
 	}
@@ -28,15 +28,15 @@ public class SineCosineSynthesis extends JApplet implements ActionListener, Mous
 	private JButton btnGenx1;
 	private JButton btnGenx2;
 	private JButton btnGenx3;
-	private JTextField tfx1_Amplitude;
+	private AmpNumberField tfx1_Amplitude;
 	private JLabel lblx1;
 	private JLabel lblx2;
 	private JLabel lblx3;
-	private JTextField tfx2_Amplitude;
+	private AmpNumberField tfx2_Amplitude;
 	private JLabel lblx1_function;
 	private JLabel lblx2_function;
-	private JTextField tfx1_frequency;
-	private JTextField tfx2_frequency;
+	private FreNumberField tfx1_frequency;
+	private FreNumberField tfx2_frequency;
 	private JButton btnSinx1;
 	private JButton btnSinx2;
 	private JButton btnCosx1;
@@ -57,7 +57,7 @@ public class SineCosineSynthesis extends JApplet implements ActionListener, Mous
 		btnGenx3.setBounds(12, 268, 60, 23);
 		getContentPane().add(btnGenx3);
 		
-		tfx1_Amplitude = new JTextField();
+		tfx1_Amplitude = new AmpNumberField();
 		tfx1_Amplitude.setText("1");
 		tfx1_Amplitude.setToolTipText("Amplitude input (between 0~2)");
 		tfx1_Amplitude.setBounds(179, 202, 19, 23);
@@ -79,7 +79,7 @@ public class SineCosineSynthesis extends JApplet implements ActionListener, Mous
 		lblx3.setBounds(104, 268, 200, 22);
 		getContentPane().add(lblx3);
 		
-		tfx2_Amplitude = new JTextField();
+		tfx2_Amplitude = new AmpNumberField();
 		tfx2_Amplitude.setToolTipText("Amplitude input (between 0~2)");
 		tfx2_Amplitude.setText("1");
 		tfx2_Amplitude.setBounds(179, 235, 19, 23);
@@ -96,13 +96,15 @@ public class SineCosineSynthesis extends JApplet implements ActionListener, Mous
 		lblx2_function.setBounds(204, 235, 149, 23);
 		getContentPane().add(lblx2_function);
 		
-		tfx1_frequency = new JTextField();
+		tfx1_frequency = new FreNumberField();
+		tfx1_frequency.setToolTipText("Frequency input (between 0~999)");
 		tfx1_frequency.setText("1");
 		tfx1_frequency.setBounds(283, 202, 43, 23);
 		getContentPane().add(tfx1_frequency);
 		tfx1_frequency.setColumns(3);
 		
-		tfx2_frequency = new JTextField();
+		tfx2_frequency = new FreNumberField();
+		tfx2_frequency.setToolTipText("Frequency input (between 0~999)");
 		tfx2_frequency.setText("1");
 		tfx2_frequency.setBounds(283, 235, 43, 23);
 		getContentPane().add(tfx2_frequency);
